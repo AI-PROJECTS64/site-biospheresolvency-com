@@ -86,6 +86,13 @@
       color:#c1ccec;
       font-size:13px
     }
+    .badge-dot{
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:radial-gradient(circle,#4ade80 0,#16a34a 55%,#052e16 100%);
+      box-shadow:0 0 0 6px rgba(34,197,94,.25);
+    }
     .lang{
       gap:10px;
       display:flex;
@@ -97,7 +104,8 @@
       border:1px solid #1d2946;
       padding:7px 12px;
       border-radius:999px;
-      cursor:pointer
+      cursor:pointer;
+      font-size:13px;
     }
     .lang button[aria-pressed="true"]{
       background:var(--accent);
@@ -181,7 +189,10 @@
 <body>
   <div class="wrap">
     <div class="topbar">
-      <div class="badge">Actif numérique disponible à l’acquisition</div>
+      <div class="badge">
+        <span class="badge-dot"></span>
+        <span>Actif numérique disponible à l’acquisition</span>
+      </div>
       <div class="lang">
         <button id="btn-fr" aria-pressed="true">FR</button>
         <button id="btn-en" aria-pressed="false">EN</button>
@@ -222,7 +233,7 @@
       </div>
       <p class="muted" style="margin-top:8px">
         Les travaux TNFD, NGFS et les cadres nature/climat montrent que la dégradation
-        de la biosphère n’est plus une simple externalité ESG mais un <b>determinant de solvabilité</b> :
+        de la biosphère n’est plus une simple externalité ESG mais un <b>déterminant de solvabilité</b> :
         productivité agricole, matières premières, eau, biomasse, risques physiques,
         CAPEX d’adaptation et coûts d’assurance.<br>
         <b>Nota :</b> BiosphereSolvency.com est un <b>actif sémantique descriptif</b>.
@@ -261,7 +272,7 @@
       </p>
     </section>
 
-    <!-- ================= AUTRES ACTIFS FR ================= -->
+    <!-- ================= AUTRES ACTIFS FR (mention non cliquable) ================= -->
     <section class="card" style="margin-top:16px" data-fr>
       <h3>Actifs associés (thèse solvency & nature/climat)</h3>
       <p class="muted">
@@ -270,15 +281,15 @@
         de solvabilité physique et nature/climat&nbsp;:
       </p>
       <div class="list">
-        <a class="chip" href="https://www.naturesolvency.com" target="_blank" rel="noopener">NatureSolvency.com</a>
-        <a class="chip" href="https://www.climatesolvency.com" target="_blank" rel="noopener">ClimateSolvency.com</a>
-        <a class="chip" href="https://www.watersolvency.com" target="_blank" rel="noopener">WaterSolvency.com</a>
-        <a class="chip" href="https://www.energysolvency.com" target="_blank" rel="noopener">EnergySolvency.com</a>
-        <a class="chip" href="https://www.planetarysolvency.com" target="_blank" rel="noopener">PlanetarySolvency.com</a>
+        <span class="chip">NatureSolvency.com</span>
+        <span class="chip">ClimateSolvency.com</span>
+        <span class="chip">WaterSolvency.com</span>
+        <span class="chip">EnergySolvency.com</span>
+        <span class="chip">PlanetarySolvency.com</span>
       </div>
       <p class="muted">
-        Ces liens sont fournis à titre indicatif pour illustrer un portefeuille possible.
-        Ce site ne propose à l’acquisition que le nom de domaine <b>BiosphereSolvency.com</b>.
+        Ces exemples sont fournis à titre illustratif. Sur ce site, seul le nom de domaine
+        <b>BiosphereSolvency.com</b> est proposé à l’acquisition.
       </p>
     </section>
 
@@ -299,8 +310,8 @@
     <section class="card" style="margin-top:16px" data-fr>
       <h3>Documents / Briefs</h3>
       <p class="muted">
-        Brief d’acquisition détaillé BiosphereSolvency.com (2025-11) disponible en français et en anglais
-        pour les équipes Risques, Finance, Climat/Nature, ESG & Juridique.
+        Brief d’acquisition détaillé BiosphereSolvency.com (2025-11) disponible en français
+        (et en anglais via la section EN) pour les équipes Risques, Finance, Climat/Nature, ESG &amp; Juridique.
       </p>
       <div class="cta">
         <a class="btn" href="/Acquisition%20Brief%20Biospheresolvency-202511.pdf" target="_blank" rel="noopener" type="application/pdf">
@@ -308,12 +319,6 @@
         </a>
         <a class="btn primary" href="/Acquisition%20Brief%20Biospheresolvency-202511.pdf" download="Acquisition-Brief-BiosphereSolvency-FR-202511.pdf" type="application/pdf">
           📥 Télécharger (FR, PDF)
-        </a>
-        <a class="btn" href="/Acquisition%20Brief%20Biospheresolvency-EN-202511.pdf" target="_blank" rel="noopener" type="application/pdf">
-          👁️ Open Brief (EN)
-        </a>
-        <a class="btn primary" href="/Acquisition%20Brief%20Biospheresolvency-EN-202511.pdf" download="Acquisition-Brief-BiosphereSolvency-EN-202511.pdf" type="application/pdf">
-          📥 Download (EN, PDF)
         </a>
       </div>
     </section>
@@ -390,7 +395,7 @@
       </p>
     </section>
 
-    <!-- ================= RELATED EN ================= -->
+    <!-- ================= RELATED EN (non-cliquable) ================= -->
     <section class="card" style="margin-top:16px" data-en hidden>
       <h3>Related assets (solvency & nature/climate thesis)</h3>
       <p class="muted">
@@ -399,14 +404,14 @@
         planetary, nature and climate-related solvency risks:
       </p>
       <div class="list">
-        <a class="chip" href="https://www.naturesolvency.com" target="_blank" rel="noopener">NatureSolvency.com</a>
-        <a class="chip" href="https://www.climatesolvency.com" target="_blank" rel="noopener">ClimateSolvency.com</a>
-        <a class="chip" href="https://www.watersolvency.com" target="_blank" rel="noopener">WaterSolvency.com</a>
-        <a class="chip" href="https://www.energysolvency.com" target="_blank" rel="noopener">EnergySolvency.com</a>
-        <a class="chip" href="https://www.planetarysolvency.com" target="_blank" rel="noopener">PlanetarySolvency.com</a>
+        <span class="chip">NatureSolvency.com</span>
+        <span class="chip">ClimateSolvency.com</span>
+        <span class="chip">WaterSolvency.com</span>
+        <span class="chip">EnergySolvency.com</span>
+        <span class="chip">PlanetarySolvency.com</span>
       </div>
       <p class="muted">
-        Links are illustrative only. This site offers for sale the <b>BiosphereSolvency.com</b>
+        These examples are illustrative only. This site offers for sale the <b>BiosphereSolvency.com</b>
         domain name exclusively.
       </p>
     </section>
@@ -428,8 +433,8 @@
     <section class="card" style="margin-top:16px" data-en hidden>
       <h3>Documents / Briefs</h3>
       <p class="muted">
-        Detailed BiosphereSolvency.com acquisition brief (2025-11) available in English and French
-        for Risk, Finance, Nature/Climate, ESG & Legal teams.
+        Detailed BiosphereSolvency.com acquisition brief (2025-11) available in English
+        (and in French via the FR section) for Risk, Finance, Nature/Climate, ESG & Legal teams.
       </p>
       <div class="cta">
         <a class="btn" href="/Acquisition%20Brief%20Biospheresolvency-EN-202511.pdf" target="_blank" rel="noopener" type="application/pdf">
@@ -437,12 +442,6 @@
         </a>
         <a class="btn primary" href="/Acquisition%20Brief%20Biospheresolvency-EN-202511.pdf" download="Acquisition-Brief-BiosphereSolvency-EN-202511.pdf" type="application/pdf">
           📥 Download (EN, PDF)
-        </a>
-        <a class="btn" href="/Acquisition%20Brief%20Biospheresolvency-202511.pdf" target="_blank" rel="noopener" type="application/pdf">
-          👁️ Ouvrir le Brief (FR)
-        </a>
-        <a class="btn primary" href="/Acquisition%20Brief%20Biospheresolvency-202511.pdf" download="Acquisition-Brief-BiosphereSolvency-FR-202511.pdf" type="application/pdf">
-          📥 Télécharger (FR, PDF)
         </a>
       </div>
     </section>
@@ -458,16 +457,24 @@
   <script>
     const frBtn = document.getElementById('btn-fr');
     const enBtn = document.getElementById('btn-en');
-    const show = (lang) => {
+
+    function show(lang){
       document.querySelectorAll('[data-fr]').forEach(n => n.hidden = (lang !== 'fr'));
       document.querySelectorAll('[data-en]').forEach(n => n.hidden = (lang !== 'en'));
       frBtn.setAttribute('aria-pressed', String(lang === 'fr'));
       enBtn.setAttribute('aria-pressed', String(lang === 'en'));
       document.documentElement.lang = lang;
-    };
+    }
+
     frBtn.addEventListener('click', () => show('fr'));
     enBtn.addEventListener('click', () => show('en'));
-    show('fr');
+
+    // Détection initiale : FR si navigateur en fr-*, sinon EN
+    (function initLang(){
+      const navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      const defaultLang = navLang.startsWith('fr') ? 'fr' : 'en';
+      show(defaultLang);
+    })();
   </script>
 </body>
 </html>
