@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -194,13 +194,13 @@
         <span>Actif numérique disponible à l’acquisition</span>
       </div>
       <div class="lang">
-        <button id="btn-fr" aria-pressed="true">FR</button>
-        <button id="btn-en" aria-pressed="false">EN</button>
+        <button id="btn-fr" aria-pressed="false">FR</button>
+        <button id="btn-en" aria-pressed="true">EN</button>
       </div>
     </div>
 
     <!-- ================= HERO FR ================= -->
-    <section class="card hero" data-fr>
+    <section class="card hero" data-fr hidden>
       <h1>BiosphereSolvency.com</h1>
       <img class="logo" src="/logo-biospheresolvency.png" alt="BiosphereSolvency.com" loading="eager">
       <p class="muted">
@@ -243,7 +243,7 @@
     </section>
 
     <!-- ================= VALUE FR ================= -->
-    <section id="value-fr" class="card" style="margin-top:16px" data-fr>
+    <section id="value-fr" class="card" style="margin-top:16px" data-fr hidden>
       <div class="grid">
         <div class="col-6">
           <h3>Pourquoi BiosphereSolvency.com a de la valeur</h3>
@@ -272,8 +272,8 @@
       </p>
     </section>
 
-    <!-- ================= AUTRES ACTIFS FR (non cliquables) ================= -->
-    <section class="card" style="margin-top:16px" data-fr>
+    <!-- ================= AUTRES ACTIFS FR ================= -->
+    <section class="card" style="margin-top:16px" data-fr hidden>
       <h3>Actifs associés (thèse solvency & nature/climat)</h3>
       <p class="muted">
         Selon la stratégie de l’acquéreur, BiosphereSolvency.com peut être articulé avec
@@ -294,7 +294,7 @@
     </section>
 
     <!-- ================= ACQUISITION FR ================= -->
-    <section class="card" style="margin-top:16px" data-fr>
+    <section class="card" style="margin-top:16px" data-fr hidden>
       <h3>Acquisition (process sécurisé)</h3>
       <p class="muted">
         Process type : NDA &rarr; échanges stratégiques &rarr; offre formelle &rarr; escrow &rarr; transfert du domaine.
@@ -307,7 +307,7 @@
     </section>
 
     <!-- ================= DOCS FR ================= -->
-    <section class="card" style="margin-top:16px" data-fr>
+    <section class="card" style="margin-top:16px" data-fr hidden>
       <h3>Documents / Briefs</h3>
       <p class="muted">
         Brief d’acquisition détaillé BiosphereSolvency.com (2025-11) disponible en français
@@ -324,7 +324,7 @@
     </section>
 
     <!-- ================= HERO EN ================= -->
-    <section class="card hero" data-en hidden>
+    <section class="card hero" data-en>
       <h1>BiosphereSolvency.com</h1>
       <img class="logo" src="/logo-biospheresolvency.png" alt="BiosphereSolvency.com" loading="eager">
       <p class="muted">
@@ -366,7 +366,7 @@
     </section>
 
     <!-- ================= VALUE EN ================= -->
-    <section id="value-en" class="card" style="margin-top:16px" data-en hidden>
+    <section id="value-en" class="card" style="margin-top:16px" data-en>
       <div class="grid">
         <div class="col-6">
           <h3>Why BiosphereSolvency.com is valuable</h3>
@@ -395,8 +395,8 @@
       </p>
     </section>
 
-    <!-- ================= RELATED EN (non cliquables) ================= -->
-    <section class="card" style="margin-top:16px" data-en hidden>
+    <!-- ================= RELATED EN ================= -->
+    <section class="card" style="margin-top:16px" data-en>
       <h3>Related assets (solvency & nature/climate thesis)</h3>
       <p class="muted">
         Depending on the buyer’s strategy, BiosphereSolvency.com can be combined with
@@ -417,7 +417,7 @@
     </section>
 
     <!-- ================= ACQUISITION EN ================= -->
-    <section class="card" style="margin-top:16px" data-en hidden>
+    <section class="card" style="margin-top:16px" data-en>
       <h3>Acquisition (secure process)</h3>
       <p class="muted">
         Typical flow: NDA &rarr; strategic discussions &rarr; formal offer &rarr; escrow &rarr; domain transfer.
@@ -430,7 +430,7 @@
     </section>
 
     <!-- ================= DOCS EN ================= -->
-    <section class="card" style="margin-top:16px" data-en hidden>
+    <section class="card" style="margin-top:16px" data-en>
       <h3>Documents / Briefs</h3>
       <p class="muted">
         Detailed BiosphereSolvency.com acquisition brief (2025-11) available in English
@@ -461,20 +461,18 @@
     function show(lang){
       document.querySelectorAll('[data-fr]').forEach(n => n.hidden = (lang !== 'fr'));
       document.querySelectorAll('[data-en]').forEach(n => n.hidden = (lang !== 'en'));
+
       frBtn.setAttribute('aria-pressed', String(lang === 'fr'));
       enBtn.setAttribute('aria-pressed', String(lang === 'en'));
-      document.documentElement.lang = lang;
+
+      document.documentElement.lang = (lang === 'fr') ? 'fr' : 'en';
     }
 
     frBtn.addEventListener('click', () => show('fr'));
     enBtn.addEventListener('click', () => show('en'));
 
-    // Détection initiale : FR si navigateur en fr-*, sinon EN
-    (function initLang(){
-      const navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-      const defaultLang = navLang.startsWith('fr') ? 'fr' : 'en';
-      show(defaultLang);
-    })();
+    // .com : anglais par défaut, FR en option
+    show('en');
   </script>
 </body>
 </html>
