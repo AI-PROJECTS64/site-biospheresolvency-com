@@ -126,8 +126,8 @@
     }
     .cta{
       display:flex;
-      gap:12px;
       flex-wrap:wrap;
+      gap:12px;
       margin:18px 0 6px
     }
     .btn{
@@ -147,6 +147,15 @@
       background:var(--accent);
       color:#020815;
       border-color:transparent
+    }
+    .btn-secondary{
+      background:transparent;
+      color:var(--accent);
+      border:1px solid #21325b;
+    }
+    .btn-secondary:hover{
+      background:#122143;
+      text-decoration:none;
     }
     .grid{
       display:grid;
@@ -182,6 +191,7 @@
     @media (max-width:860px){
       .col-6{grid-column:span 12}
       .hero h1{font-size:34px}
+      .cta{flex-direction:column;align-items:flex-start}
     }
     .ico{width:16px;height:16px;display:inline-block;vertical-align:middle}
   </style>
@@ -344,6 +354,9 @@
       <div class="cta">
         <a class="btn primary" href="mailto:contact@biospheresolvency.com?subject=BiosphereSolvency.com%20-%20NDA%20%2F%20Offer&body=Hello%2C%0D%0A%0D%0AI%27d%20like%20to%20request%20your%20NDA%20and%2For%20submit%20an%20offer%20for%20BiosphereSolvency.com.%0D%0ACompany%3A%20%0D%0AName%20%2F%20Role%3A%20%0D%0AIntended%20use%3A%20%0D%0ABudget%20range%3A%20%0D%0ABest%2C">
           Submit an offer / Request NDA
+        </a>
+        <a class="btn-secondary" href="/concept-note.html">
+          Concept Note
         </a>
         <a class="btn" href="#value-en">Why this name?</a>
         <a class="btn" href="https://www.linkedin.com/company/biospheresolvency" target="_blank" rel="noopener" aria-label="Open BiosphereSolvency on LinkedIn">
